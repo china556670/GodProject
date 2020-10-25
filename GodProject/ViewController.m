@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 #import <YYKit.h>
-#define GodOrigin @"2020-10-25 10:00:00"
+#define GodOrigin @"2020-10-25 14:24:00"
 #define GodValuePerDay 20
 #define DateFormate @"yyyy-MM-dd HH:mm:ss"
 
