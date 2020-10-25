@@ -19,8 +19,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="psc 640×970明日方舟 ...@有机酸与生物碱采集到动漫女孩子图集248图_花瓣" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-6a-Wd5">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebB-60-Ch2">
-                                <rect key="frame" x="175.5" y="682" width="63.5" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    (゜-゜)つロ    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebB-60-Ch2">
+                                <rect key="frame" x="116.5" y="682" width="181" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XZb-1e-c5G"/>
@@ -29,32 +29,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-9Y-b3a">
-                                <rect key="frame" x="175.5" y="762" width="63.5" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw6-wb-fgR">
+                                <rect key="frame" x="130.5" y="758" width="153" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Za0-kd-Bsr"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="    Take One    ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIJ-78-Ldh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bw6-wb-fgR" secondAttribute="bottom" constant="60" id="9ay-qy-pDg"/>
                             <constraint firstItem="HJk-6a-Wd5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iry-6p-Lxz"/>
-                            <constraint firstItem="ZQd-9Y-b3a" firstAttribute="top" secondItem="ebB-60-Ch2" secondAttribute="bottom" constant="40" id="N7V-pj-VSH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQd-9Y-b3a" secondAttribute="bottom" constant="60" id="du1-Jv-hfU"/>
+                            <constraint firstItem="bw6-wb-fgR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YUC-hu-xi4"/>
                             <constraint firstItem="ebB-60-Ch2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gTC-7l-mUD"/>
                             <constraint firstItem="HJk-6a-Wd5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ije-AU-RVz"/>
-                            <constraint firstItem="ZQd-9Y-b3a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krx-ii-GNl"/>
                             <constraint firstAttribute="trailing" secondItem="HJk-6a-Wd5" secondAttribute="trailing" id="rcS-bD-mOh"/>
+                            <constraint firstItem="bw6-wb-fgR" firstAttribute="top" secondItem="ebB-60-Ch2" secondAttribute="bottom" constant="36" id="xY2-sO-b6N"/>
                             <constraint firstAttribute="bottom" secondItem="HJk-6a-Wd5" secondAttribute="bottom" id="yA1-I6-23O"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="money" destination="ZQd-9Y-b3a" id="DDg-CS-E5K"/>
+                        <outlet property="reset" destination="bw6-wb-fgR" id="Oyo-GP-wCF"/>
                         <outlet property="time" destination="ebB-60-Ch2" id="7EW-rs-xub"/>
                     </connections>
                 </viewController>
