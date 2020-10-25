@@ -97,7 +97,6 @@
 				BDA3BAD5122460AC17849305 /* Pods-GodProject.debug.xcconfig */,
 				35073703D53C5DA340943275 /* Pods-GodProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
