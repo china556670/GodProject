@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="psc 640×970明日方舟 ...@有机酸与生物碱采集到动漫女孩子图集248图_花瓣" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-6a-Wd5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebB-60-Ch2">
+                                <rect key="frame" x="175.5" y="682" width="63.5" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XZb-1e-c5G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQd-9Y-b3a">
+                                <rect key="frame" x="175.5" y="762" width="63.5" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Za0-kd-Bsr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HJk-6a-Wd5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iry-6p-Lxz"/>
+                            <constraint firstItem="ZQd-9Y-b3a" firstAttribute="top" secondItem="ebB-60-Ch2" secondAttribute="bottom" constant="40" id="N7V-pj-VSH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQd-9Y-b3a" secondAttribute="bottom" constant="60" id="du1-Jv-hfU"/>
+                            <constraint firstItem="ebB-60-Ch2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gTC-7l-mUD"/>
+                            <constraint firstItem="HJk-6a-Wd5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ije-AU-RVz"/>
+                            <constraint firstItem="ZQd-9Y-b3a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="krx-ii-GNl"/>
+                            <constraint firstAttribute="trailing" secondItem="HJk-6a-Wd5" secondAttribute="trailing" id="rcS-bD-mOh"/>
+                            <constraint firstAttribute="bottom" secondItem="HJk-6a-Wd5" secondAttribute="bottom" id="yA1-I6-23O"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="money" destination="ZQd-9Y-b3a" id="DDg-CS-E5K"/>
+                        <outlet property="time" destination="ebB-60-Ch2" id="7EW-rs-xub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="psc 640×970明日方舟 ...@有机酸与生物碱采集到动漫女孩子图集248图_花瓣" width="640" height="970"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
