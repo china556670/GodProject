@@ -40,12 +40,24 @@
                                     <action selector="resetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIJ-78-Ldh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    (゜-゜)つロ    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Go-lf-Ykn">
+                                <rect key="frame" x="116.5" y="606" width="181" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EI4-6r-89g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bw6-wb-fgR" secondAttribute="bottom" constant="60" id="9ay-qy-pDg"/>
+                            <constraint firstItem="4Go-lf-Ykn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H0k-Ld-TkJ"/>
                             <constraint firstItem="HJk-6a-Wd5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iry-6p-Lxz"/>
+                            <constraint firstItem="ebB-60-Ch2" firstAttribute="top" secondItem="4Go-lf-Ykn" secondAttribute="bottom" constant="36" id="Xhd-Ye-G9m"/>
                             <constraint firstItem="bw6-wb-fgR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YUC-hu-xi4"/>
                             <constraint firstItem="ebB-60-Ch2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gTC-7l-mUD"/>
                             <constraint firstItem="HJk-6a-Wd5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ije-AU-RVz"/>
@@ -55,6 +67,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="iPhone12ProMax512G" destination="4Go-lf-Ykn" id="gvi-ri-X8F"/>
                         <outlet property="reset" destination="bw6-wb-fgR" id="Oyo-GP-wCF"/>
                         <outlet property="time" destination="ebB-60-Ch2" id="7EW-rs-xub"/>
                     </connections>

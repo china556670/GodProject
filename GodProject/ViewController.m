@@ -7,10 +7,12 @@
 
 #import "ViewController.h"
 #import <YYKit.h>
+#define IPHONE12PROMAX 11899
 #define DateFormate @"yyyy-MM-dd HH:mm:ss"
 #define DateRecordKey @"DateRecordKey"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *iPhone12ProMax512G;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UIButton *reset;
 
@@ -26,6 +28,8 @@
     self.time.layer.masksToBounds = YES;
     self.reset.layer.cornerRadius = 20;
     self.reset.layer.masksToBounds = YES;
+    self.iPhone12ProMax512G.layer.cornerRadius = 20;
+    self.iPhone12ProMax512G.layer.masksToBounds = YES;
     
     if ([self obtainRecordedDateSting].length > 0) [self startTimer];
 }
@@ -66,6 +70,7 @@
     NSDate *nowDate = [NSDate date];
     NSInteger seconds = [nowDate timeIntervalSinceDate:[NSDate dateWithString:[self obtainRecordedDateSting] format:DateFormate]];
     self.time.text = [NSString stringWithFormat:@"    %zdd %zdh %zdm %zds    ", seconds / 86400, seconds % 86400 / 3600, seconds % 3600 / 60, seconds % 60];
+    self.iPhone12ProMax512G.text = [NSString stringWithFormat:@"    ¥ %.2f / %d    ", seconds * 1.0 / 1814400 * IPHONE12PROMAX, IPHONE12PROMAX];
 }
 
 - (dispatch_source_t)getTimerOfRepeatingThings:(void(^)(void))block timeInterval:(int)interval {
