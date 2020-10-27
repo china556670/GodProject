@@ -7,14 +7,15 @@
 
 #import "ViewController.h"
 #import <YYKit.h>
+#import "RecordDataManager.h"
 #define IPHONE12PROMAX 11899
-#define DateFormate @"yyyy-MM-dd HH:mm:ss"
-#define DateRecordKey @"DateRecordKey"
+
+#import "MenheraAlert.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *iPhone12ProMax512G;
 @property (weak, nonatomic) IBOutlet UILabel *time;
-@property (weak, nonatomic) IBOutlet UIButton *reset;
+@property (weak, nonatomic) IBOutlet UIButton *askMenhera;
 
 @end
 
@@ -26,51 +27,58 @@
     [super viewDidLoad];
     self.time.layer.cornerRadius = 20;
     self.time.layer.masksToBounds = YES;
-    self.reset.layer.cornerRadius = 20;
-    self.reset.layer.masksToBounds = YES;
+    self.askMenhera.layer.cornerRadius = 20;
+    self.askMenhera.layer.masksToBounds = YES;
     self.iPhone12ProMax512G.layer.cornerRadius = 20;
     self.iPhone12ProMax512G.layer.masksToBounds = YES;
     
-    if ([self obtainRecordedDateSting].length > 0) [self startTimer];
+    if ([RecordDataManager smokeDate].length > 0) [self startTimer];
 }
 
-- (IBAction)resetAction:(id)sender {
-    [self showAlert];
+- (IBAction)askMenheraAction:(id)sender {
+    __weak __typeof (self)weakSelf = self;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"呐" message:@"你确定要问Menhera吗？" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"算啦" style:UIAlertActionStyleDefault handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"是啦" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [RecordDataManager updateMenheraDate];
+        [MenheraAlert showWithOperate:^(BOOL answer) {
+            if (answer) {
+                [weakSelf refreshSmokeTime];
+            }
+        }];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)takeOne {
-    [self stopTimer];
-    [self recordNewDate];
+- (void)refreshSmokeTime {
+    if (_repeatingTimer) dispatch_cancel(_repeatingTimer);
+    [RecordDataManager updateSmokeDate];
     [self startTimer];
 }
 
-- (void)stopTimer {
-    if (_repeatingTimer) dispatch_cancel(_repeatingTimer);
+- (void)refreshMenheraTime {
+    [RecordDataManager updateMenheraDate];
 }
 
-- (void)recordNewDate {
-    [[NSUserDefaults standardUserDefaults] setValue:[[NSDate date] stringWithFormat:DateFormate] forKey:DateRecordKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
 
-- (NSString *)obtainRecordedDateSting {
-    return [[NSUserDefaults standardUserDefaults] valueForKey:DateRecordKey];
-}
 
+#pragma mark - StartTimer
 - (void)startTimer {
     __weak __typeof (self)weakSelf = self;
     _repeatingTimer = [self getTimerOfRepeatingThings:^{
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf updateTimeLabel];
+            [weakSelf updateUI];
         });
     } timeInterval:1];
 }
 
-- (void)updateTimeLabel {
+- (void)updateUI {
     NSDate *nowDate = [NSDate date];
-    NSInteger seconds = [nowDate timeIntervalSinceDate:[NSDate dateWithString:[self obtainRecordedDateSting] format:DateFormate]];
-    self.time.text = [NSString stringWithFormat:@"    %zdd %zdh %zdm %zds    ", seconds / 86400, seconds % 86400 / 3600, seconds % 3600 / 60, seconds % 60];
+    NSInteger seconds = [nowDate timeIntervalSinceDate:[NSDate dateWithString:[RecordDataManager smokeDate] format:DateFormate]];
+    NSInteger secondsMenhera = [nowDate timeIntervalSinceDate:[NSDate dateWithString:[RecordDataManager menheraDate] format:DateFormate]];
+    self.time.text = [NSString stringWithFormat:@"    %zd天 %zd小时 %zd分 %zd秒    ", seconds / 86400, seconds % 86400 / 3600, seconds % 3600 / 60, seconds % 60];
     self.iPhone12ProMax512G.text = [NSString stringWithFormat:@"    ¥ %.2f / %d    ", seconds * 1.0 / 1814400 * IPHONE12PROMAX, IPHONE12PROMAX];
+    self.askMenhera.hidden = (secondsMenhera <= 3600);
 }
 
 - (dispatch_source_t)getTimerOfRepeatingThings:(void(^)(void))block timeInterval:(int)interval {
@@ -82,16 +90,6 @@
     });
     dispatch_resume(_timer);
     return _timer;
-}
-
-- (void)showAlert {
-    __weak __typeof (self)weakSelf = self;
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Are you sure to take one now ?" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"JustTakeOne" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf takeOne];
-    }]];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 

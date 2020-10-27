@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D15B35E2548574000AEED43 /* RecordDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D15B35D2548574000AEED43 /* RecordDataManager.m */; };
+		5D7D5856254828540047079C /* MenheraAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7D5855254828540047079C /* MenheraAlert.m */; };
+		5D7D5859254828640047079C /* MenheraAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D7D5858254828640047079C /* MenheraAlert.xib */; };
 		5D8B5ED52543EFA4009B5A4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5ED42543EFA4009B5A4E /* AppDelegate.m */; };
 		5D8B5ED82543EFA4009B5A4E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5ED72543EFA4009B5A4E /* SceneDelegate.m */; };
 		5D8B5EDB2543EFA4009B5A4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5EDA2543EFA4009B5A4E /* ViewController.m */; };
@@ -20,6 +23,11 @@
 /* Begin PBXFileReference section */
 		1093FD073DCDB568D447A5AF /* libPods-GodProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GodProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35073703D53C5DA340943275 /* Pods-GodProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GodProject.release.xcconfig"; path = "Target Support Files/Pods-GodProject/Pods-GodProject.release.xcconfig"; sourceTree = "<group>"; };
+		5D15B35C2548574000AEED43 /* RecordDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordDataManager.h; sourceTree = "<group>"; };
+		5D15B35D2548574000AEED43 /* RecordDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordDataManager.m; sourceTree = "<group>"; };
+		5D7D5854254828540047079C /* MenheraAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenheraAlert.h; sourceTree = "<group>"; };
+		5D7D5855254828540047079C /* MenheraAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenheraAlert.m; sourceTree = "<group>"; };
+		5D7D5858254828640047079C /* MenheraAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenheraAlert.xib; sourceTree = "<group>"; };
 		5D8B5ED02543EFA4009B5A4E /* GodProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8B5ED32543EFA4009B5A4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D8B5ED42543EFA4009B5A4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,6 +87,11 @@
 				5D8B5EE12543EFA5009B5A4E /* LaunchScreen.storyboard */,
 				5D8B5EE42543EFA5009B5A4E /* Info.plist */,
 				5D8B5EE52543EFA5009B5A4E /* main.m */,
+				5D7D5854254828540047079C /* MenheraAlert.h */,
+				5D7D5855254828540047079C /* MenheraAlert.m */,
+				5D7D5858254828640047079C /* MenheraAlert.xib */,
+				5D15B35C2548574000AEED43 /* RecordDataManager.h */,
+				5D15B35D2548574000AEED43 /* RecordDataManager.m */,
 			);
 			path = GodProject;
 			sourceTree = "<group>";
@@ -160,6 +173,7 @@
 				5D8B5EE32543EFA5009B5A4E /* LaunchScreen.storyboard in Resources */,
 				5D8B5EE02543EFA5009B5A4E /* Assets.xcassets in Resources */,
 				5D8B5EDE2543EFA4009B5A4E /* Main.storyboard in Resources */,
+				5D7D5859254828640047079C /* MenheraAlert.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +211,9 @@
 			files = (
 				5D8B5EDB2543EFA4009B5A4E /* ViewController.m in Sources */,
 				5D8B5ED52543EFA4009B5A4E /* AppDelegate.m in Sources */,
+				5D15B35E2548574000AEED43 /* RecordDataManager.m in Sources */,
 				5D8B5EE62543EFA5009B5A4E /* main.m in Sources */,
+				5D7D5856254828540047079C /* MenheraAlert.m in Sources */,
 				5D8B5ED82543EFA4009B5A4E /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
