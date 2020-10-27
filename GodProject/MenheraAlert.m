@@ -6,6 +6,7 @@
 //
 
 #import "MenheraAlert.h"
+#import "RecordDataManager.h"
 #define MenheraThink 6
 
 @interface MenheraAlert ()
@@ -25,6 +26,7 @@
         int value = arc4random() % MenheraThink;
         value == (MenheraThink - 1);
     });
+    if ([RecordDataManager smokeDate].length <= 0) self.answer = YES;
     UIImage *menheraAnswer = self.answer ? [UIImage imageNamed:@"MenheraYES"] : [UIImage imageNamed:@"MenheraNO"];
     [self.menhera setImage:menheraAnswer forState:UIControlStateNormal];
 
